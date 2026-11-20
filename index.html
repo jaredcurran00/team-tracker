@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="login" class="login hidden">
+    <form id="login-form" class="card login-card">
+      <h1>Team Tracker</h1>
+      <p class="muted">Sign in to see your work and your team.</p>
+      <label>Email<input name="email" type="email" required autocomplete="username" /></label>
+      <label>Password<input name="password" type="password" required autocomplete="current-password" /></label>
+      <p id="login-error" class="error"></p>
+      <button class="btn primary" type="submit">Sign in</button>
+      <p class="hint">Demo: <code>director@example.com</code> / <code>demo1234</code><br />
+        Other logins: <code>manager@example.com</code>, <code>sam@example.com</code> (same password)</p>
+      <p class="hint">This demo saves changes in your browser only.
+        <button type="button" class="link" style="color:var(--accent)" onclick="resetDemo()">Reset demo data</button></p>
+    </form>
+  </div>
+
+  <div id="app" class="shell hidden">
+    <aside class="sidebar">
+      <div class="brand">Team Tracker</div>
+      <nav id="nav">
+        <a href="#/team" data-route="team" class="team-only">Team dashboard</a>
+        <a href="#/mine" data-route="mine">My tasks</a>
+        <a href="#/assigned" data-route="assigned" class="team-only">Assigned by me</a>
+        <a href="#/projects" data-route="projects">Projects</a>
+      </nav>
+      <button class="btn primary block" id="assign-btn">+ Assign task</button>
+      <div class="me">
+        <div id="me-name"></div>
+        <div id="me-title" class="muted small"></div>
+        <button class="link" id="logout">Sign out</button>
+      </div>
+    </aside>
+    <main id="view"></main>
+  </div>
+
+  <dialog id="modal"><div id="modal-body"></div></dialog>
+  <div id="toast" class="toast"></div>
+
+  <script src="demo-api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
