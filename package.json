@@ -1,0 +1,19 @@
+{
+  "name": "team-tracker",
+  "version": "0.1.0",
+  "description": "Lightweight team task and project tracker with manager dashboards",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "create-admin": "node create-admin.js",
+    "reset": "node -e \"require('fs').rmSync('data',{recursive:true,force:true})\" && node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "express": "^4.21.2"
+  },
+  "license": "MIT"
+}
